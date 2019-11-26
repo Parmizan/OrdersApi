@@ -1,0 +1,17 @@
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+
+namespace OrdersApi.Models
+{
+    public partial class Payments
+    {
+        public int Id { get; set; }
+        public string MethodName { get; set; }
+        public decimal Amount { get; set; }
+        public long OrderOxId { get; set; }
+
+        [JsonIgnore]
+        public virtual Orders OrderOx { get; set; }
+    }
+}
